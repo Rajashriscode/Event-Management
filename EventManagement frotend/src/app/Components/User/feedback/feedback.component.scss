@@ -1,0 +1,77 @@
+/* Ensure full-height coverage */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent all scrolling on the body */
+    background-color: #4b0082; /* Dark purple background for the whole page */
+  }
+  
+  /* Container for centering the card */
+  .fullscreen-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    background: url("https://t4.ftcdn.net/jpg/06/70/47/83/360_F_670478365_rendlVf707cLCLdBEb2yM5EPW8xUL8bt.jpg") no-repeat center center fixed;
+  background-size: cover;
+    // background-color: #4b0082; /* Dark purple background */
+   // background: url("https://www.surprisedecoration.com/wp-content/uploads/2022/12/toa-heftiba-TVQFl9R-MLQ-unsplash-scaled.jpg");
+    background-repeat: no-repeat;
+    padding: 20px;
+    margin-top: 60px; /* Space between the top of the box and navbar */
+  }
+  
+  /* Card styling */
+  .card {
+    background-color: #000; /* Black background for the card */
+    color: #fff; /* White text color */
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px; /* Maximum width for larger screens */
+  }
+  
+  /* Card header styling */
+  .card-header {
+    background-color: #fff; /* White background for the header */
+    padding: 10px 20px;
+    border-bottom: 1px solid #000; /* Black border at the bottom */
+  }
+  
+  .card-title {
+    padding-top: 2%;
+    padding-left: 29%;
+    font-size: 30px;
+    color: #000; /* Black text color */
+  }
+  
+  /* Form controls */
+  .form-check-label {
+    color: #fff; /* White text color */
+  }
+  
+  .form-outline .form-label {
+    color: #fff; /* White text color */
+  }
+  
+  .btn-primary {
+    background-color: rgb(10, 132, 180); /* Primary button color */
+    border: none;
+    padding-left:50px ;
+    padding-right: 50px;
+  }
+  
+  .btn-primary:hover {
+    background-color: #2d034d; /* Darker primary button color on hover */
+  }
+  
+  /* Remove the blue horizontal line */
+  hr {
+    border: none; /* Remove default border */
+    height: 1px; /* Set height to 1px */
+    background-color: #fff; /* Set background color to white */
+    margin: 20px 0; /* Adjust margin as needed */
+  }
+ 
+  

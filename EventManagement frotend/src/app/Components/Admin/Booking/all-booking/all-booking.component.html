@@ -1,0 +1,29 @@
+<div class="navbar">
+  <!-- Your navbar content here -->
+</div>
+
+<div class="main-content">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Sr.</th>
+        <th scope="col">User Name</th>
+        <th scope="col">Event Name</th>
+        <th scope="col">Status</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let booking of bookingList; let i = index">
+        <th scope="row">{{i + 1}}.</th>
+        <td>{{booking.user.name}}</td>
+        <td>{{booking.event.name}}</td>
+        <td>{{booking.status}}</td>
+        <td>
+          <button type="button" (click)="setStatusApproved(booking.bookingId)" class="btn btn-approve">Approve</button>
+          <button type="button" (click)="setStatusPending(booking.bookingId)" class="btn btn-pending ms-2">Pending</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

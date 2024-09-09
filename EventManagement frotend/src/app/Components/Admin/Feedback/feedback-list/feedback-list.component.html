@@ -1,0 +1,90 @@
+<style>
+/* feedback-list.component.scss */
+
+/* Ensure full-height coverage */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  
+}
+
+/* Wrapper to ensure full viewport height minus navbar */
+.feedback-wrapper {
+  background: url("https://t4.ftcdn.net/jpg/06/70/47/83/360_F_670478365_rendlVf707cLCLdBEb2yM5EPW8xUL8bt.jpg") no-repeat center center fixed;
+  background-size: cover;
+  padding: 20px 0; /* Add space at the top and bottom */
+  margin-top: 60px; /* Add space from the top to account for the navbar */
+  height: calc(100vh - 60px); /* Adjust for navbar height */
+}
+
+/* Centered container for feedback */
+.feedback-container {
+  background-color: #000; /* Black background for the feedback section */
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 80%; /* Adjust width as needed */
+  max-width: 800px; /* Maximum width for larger screens */
+  box-sizing: border-box; /* Ensure padding is included in the width */
+  margin: 0 auto; /* Center horizontally */
+}
+
+/* Table styling */
+.table {
+  width: 100%;
+  background-color: black; /* Black background for the table */
+  color: white; /* White text color for the table */
+  border-collapse: collapse; /* Ensures borders are visible and collapse together */
+}
+
+th, td {
+  border: 1px solid white; /* Ensure borders are white and visible */
+  padding: 10px;
+  text-align: left;
+}
+
+thead th {
+  background-color: white; /* White background for header cells */
+  color: black; /* Black text color for header cells */
+  font-weight: bolder;
+  font-size: larger;
+  border-right: 1px solid white; /* Ensure right border is visible */
+}
+
+tbody tr:hover {
+  background-color: #e9ecef; /* Light gray background on hover */
+  color: black; /* Black text color on hover */
+}
+
+/* Add bottom border for each table row to make sure horizontal lines are also visible */
+tbody tr {
+  border-bottom: 1px solid white; /* White border for horizontal lines */
+}
+
+
+</style>
+<!-- feedback-list.component.html -->
+<div class="feedback-wrapper">
+  <div class="feedback-container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Sr. No.</th>
+          <th scope="col">Feedback</th>
+          <th scope="col">Rating</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let feedback of feedbackListt; let i = index">
+          <th scope="row">{{i + 1}}.</th> <!-- Adjust index to start from 1 -->
+          <td>{{feedback.feedback}}</td>
+          <td>{{feedback.rating}}</td>
+          <td>{{feedback.description}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

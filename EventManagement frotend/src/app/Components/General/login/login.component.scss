@@ -1,0 +1,108 @@
+/* Ensure html and body cover the full viewport */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Background color for the entire page */
+body {
+    background-color: #e0e7ff; /* Soft blue background */
+}
+
+/* Background color and padding for the section */
+.section-bg {
+    background: url("https://t4.ftcdn.net/jpg/06/70/47/83/360_F_670478365_rendlVf707cLCLdBEb2yM5EPW8xUL8bt.jpg") no-repeat center center fixed;
+    background-size: cover;
+    padding-top: 70px; /* Space for the fixed navbar */
+    min-height: 100vh; /* Ensure the section covers the full height */
+    display: flex; /* Flexbox for centering the card */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+.card {
+    background-color: black; /* Black background */
+    border: none; /* Remove border */
+    border-radius: 15px; /* Rounded corners */
+    color: #ffffff; /* White text color */
+    max-width: 500px; /* Smaller card width */
+    margin: 0 auto; /* Center horizontally */
+    padding: 2rem; /* Padding inside the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+   
+}
+
+
+/* Card body styling */
+.card-body {
+    padding: 4rem; /* Padding inside the card body */
+    background-color: black; /* Ensure black background */
+}
+
+/* Styling for form controls */
+.form-control, .custom-select {
+    background-color: #f9f9f9; /* Slightly off-white background */
+    color: #000000; /* Black text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Add padding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-size: 16px; /* Increase font size */
+    margin-bottom: 15px; /* Add spacing between fields */
+    width: 100%; /* Full width */
+}
+
+/* Custom styling for select field to match other fields */
+.custom-select {
+    height: calc(2.5em + .75rem + 2px); /* Match height with other fields */
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: rgb(7, 108, 148); /* Dark purple background */
+    border-color: #000000; /* Black border */
+}
+
+.btn-primary:hover {
+    background-color: rgb(6, 84, 116);; /* Darker purple for hover */
+    // border-color: #6c1d9c; /* Darker purple for border on hover */
+}
+
+/* FontAwesome icons styling */
+.form-outline i {
+    color: #8126d1 !important; /* Dark purple color */
+}
+
+/* Eye icon styling */
+.eye-icon i {
+    color: #8126d1; /* Dark purple color for the eye icon */
+}
+/* Navbar styling */
+.navbar-dark.bg-black {
+    background-color: #000000; /* Black background for navbar */
+}
+
+.navbar-dark .navbar-brand,
+.navbar-dark .nav-link {
+    color: #ffffff; /* White color for text on navbar */
+    font-size: 1.1rem; /* Adjust font size for nav links */
+}
+
+/* Increase 'Events' text size */
+.navbar-brand {
+    font-size: 50px; /* Larger font size for 'Events' */
+    font-weight: bold; /* Make it bold */
+}
+
+/* Adjustments for navbar toggler icon on small screens */
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28white%2C 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Adjust hover effect for nav links */
+.navbar-dark .nav-link:hover {
+    color: #cccccc; /* Light gray color on hover */
+}
+
+/* Card styling - Make the login form box smaller */
+

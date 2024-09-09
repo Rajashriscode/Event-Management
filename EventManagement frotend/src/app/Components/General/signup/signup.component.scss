@@ -1,0 +1,62 @@
+/* Ensure html and body cover the full viewport */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Background color for the entire page */
+body {
+    background-color: #000000; /* Black background */
+}
+
+/* Section background and spacing */
+.section-bg {
+    background: url("https://t4.ftcdn.net/jpg/06/70/47/83/360_F_670478365_rendlVf707cLCLdBEb2yM5EPW8xUL8bt.jpg") no-repeat center center fixed;
+    background-size: cover;
+    padding-top: 70px; /* Space for the fixed navbar */
+    min-height: 100vh; /* Ensure the section covers the full height */
+    display: flex; /* Flexbox for centering the card */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+/* Card styling */
+.card {
+    background-color: black; /* Black background */
+    border-radius: 15px; /* Rounded corners */
+    border: 2px solid #000000; /* Black border */
+    color: #ffffff; /* White text color */
+}
+
+/* Card body padding */
+.card-body {
+    padding: 4rem; /* Padding inside the card */
+}
+
+/* Form control styling */
+.form-control, .custom-select {
+    background-color: #f9f9f9; /* Slightly off-white background */
+    color: #000000; /* Black text */
+    border-radius: 10px; /* Rounded input fields */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: rgb(5, 96, 133); /* Dark blue background */
+    border-color: #3b4cca; /* Matching border color */
+}
+
+/* Button hover effect */
+.btn-primary:hover {
+    background-color: rgb(5, 96, 133); /* Slightly darker on hover */
+    // border-color: #313ca1; /* Matching hover border */
+}
+.navbar-custom {
+    background-color: rgb(1, 1, 94); /* Set navbar background color */
+}
+
+.nav-link {
+    color: white !important; /* Ensure the text remains white */
+    font-size: 25px; /* Adjust font size */
+}

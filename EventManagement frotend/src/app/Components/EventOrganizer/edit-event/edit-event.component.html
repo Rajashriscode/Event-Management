@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Event</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="main-container">
+        <section class="gradient-custom">
+            <div class="container py-5">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-12 col-lg-9 col-xl-7">
+                        <div class="card shadow-2-strong card-registration" style="border-radius: 15px; margin-top: 40px;">
+                            <div class="card-body p-4 p-md-5">
+                                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-light text-center" style="font-size: 30px;">EDIT EVENT</h3>
+                                <form [formGroup]="editEventForm" (ngSubmit)="editEvent()">
+                                    <!-- Event Name -->
+                                    <div class="row justify-content-center align-items-center">
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <label class="form-label text-light">Event Name</label>
+                                                <input type="text" name="eventName" class="form-control form-control-lg" formControlName="eventName" [(ngModel)]="event.name" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Event Category and Venue -->
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <label class="form-label text-light">Event Category</label>
+                                                <select class="form-control form-control-lg" formControlName="eventCategory" [(ngModel)]="event.category">
+                                                    <option *ngFor="let cate of categoryList" [value]="cate.category">{{cate.category}}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <label class="form-label text-light">Event Venue</label>
+                                                <input type="text" name="eventVenue" class="form-control form-control-lg" formControlName="eventVenue" [(ngModel)]="event.venue" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Event Date and Time -->
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <label class="form-label text-light">Event Date</label>
+                                                <input type="date" name="eventDate" class="form-control form-control-lg" formControlName="eventDate" [(ngModel)]="event.date"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <label class="form-label text-light">Event Time</label>
+                                                <input type="text" name="eventTime" class="form-control form-control-lg" formControlName="eventTime" [(ngModel)]="event.time" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Event Price and Description -->
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <label class="form-label text-light">Event Price</label>
+                                                <input type="number" name="eventPrice" class="form-control form-control-lg" formControlName="eventPrice" [(ngModel)]="event.price" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <label class="form-label text-light">Event Description</label>
+                                                <input type="text" name="eventDescription" class="form-control form-control-lg" formControlName="eventDescription" [(ngModel)]="event.description"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Submit Button -->
+                                    <div class="mt-4 pt-2 row justify-content-center align-items-center">
+                                        <input class="btn btn-dark-purple" value="Update" type="submit"/>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

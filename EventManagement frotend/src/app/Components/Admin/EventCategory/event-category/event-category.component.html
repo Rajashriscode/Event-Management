@@ -1,0 +1,51 @@
+
+  
+  
+  <!-- Container with dark purple background -->
+<div class="background-container">
+
+    <!-- Form Section -->
+    <form [formGroup]="categoryForm" (ngSubmit)="addCategory()" 
+      class="text-center border border-primary rounded p-4 shadow-sm form-container" 
+      style="width: 40%; margin: 60px auto 0;">
+  
+      <p class="h4 mb-4 text-white-custom">Add Category</p>
+  
+      <!-- Category Input -->
+      <input type="text" id="defaultLoginFormEmail" class="form-control mb-3" placeholder="Category" formControlName="category" style="font-size: 16px; padding: 8px; border-radius: 4px; border: 2px solid #007bff; color: black; background-color: white;">
+      <div class="text-danger"
+           *ngIf="categoryForm.controls['category'].hasError('required') && categoryForm.controls['category'].touched
+           && categoryForm.controls['category'].hasError('pattern')">
+          Valid category required
+      </div>
+  
+      <!-- Submit Button -->
+      <button class="btn form-button btn-block my-3" type="submit" style="font-size: 16px; padding: 8px; border-radius: 4px;">Add</button>
+  
+    </form>
+  
+    <!-- Table Section -->
+    <div class="text-center table-container" style="width: 60%; margin: 30px auto;">
+      <table class="table table-hover table-bordered shadow-sm">
+          <thead>
+              <tr>
+                  <th scope="col">Sr.</th>
+                  <th scope="col">Event Category</th>
+                  <th scope="col">Action</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let category of eventCategoryList; let i = index" class="category-row">
+                  <th scope="row">{{i + 1}}.</th>
+                  <td class="text-left" >{{category.category}}</td>
+                  <td>
+                      <button type="button" routerLink="/admin/edit_event_category/{{category.category}}" class="btn btn-success btn-sm" style="margin-right: 10px;">Edit</button>
+                      <button type="button" (click)="delete(category.category)" class="btn btn-danger btn-sm">Delete</button>
+
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+    </div>
+  
+</div>

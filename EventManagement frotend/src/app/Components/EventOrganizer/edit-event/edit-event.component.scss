@@ -1,0 +1,41 @@
+/* Ensure the background color covers the entire viewport */
+html, body {
+    height: 100%;
+    margin: 0;
+   
+   
+}
+
+.main-container {
+    min-height: 100vh;
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.gradient-custom {
+    min-height: 100vh;
+    background: url("https://t4.ftcdn.net/jpg/06/70/47/83/360_F_670478365_rendlVf707cLCLdBEb2yM5EPW8xUL8bt.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.card-registration {
+    background-color: #000; /* Ensuring the card is still dark */
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.btn-dark-purple {
+    background-color: rgb(10, 132, 180); /* Dark purple */
+    border: none;
+    color: white;
+    width: 150px;
+    font-size: 20px;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.btn-dark-purple:hover {
+    background-color: #3a0066; /* Slightly darker purple on hover */
+}

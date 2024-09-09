@@ -1,0 +1,53 @@
+/* Ensure full-height coverage */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Section background color */
+section {
+    background: url("https://t4.ftcdn.net/jpg/06/70/47/83/360_F_670478365_rendlVf707cLCLdBEb2yM5EPW8xUL8bt.jpg") no-repeat center center fixed;
+  background-size: cover;
+    min-height: 100vh; /* Ensure it covers the full viewport height */
+}
+
+/* Container for centering the card */
+.container {
+    padding-top: 80px; /* Space between the top of the card and the navbar */
+    padding-bottom: 80px; /* Additional space at the bottom */
+}
+
+/* Card styling */
+.card {
+    background-color: #000; /* Black background for the card */
+    color: #fff; /* White text color */
+    border-radius: 25px; /* Rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 500px; /* Smaller card width */
+    margin: 0 auto; /* Center card horizontally */
+    height: auto; /* Adjust height to content */
+}
+
+/* Icon positioning */
+.icon-left {
+    position: relative;
+    top: -0.5rem;
+    left: 0.25rem;
+    font-size: 1.25rem; /* Slightly larger icon size */
+}
+
+/* Form labels and icons */
+.form-label, .fas {
+    color: #fff; /* White text color */
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: rgb(10, 132, 180); /* Primary button color */
+    border: none;
+}
+
+// .btn-primary:hover {
+//     background-color: #0056b3; /* Darker primary button color on hover */
+// }

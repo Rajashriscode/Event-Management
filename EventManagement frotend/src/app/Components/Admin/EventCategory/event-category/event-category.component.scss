@@ -1,0 +1,69 @@
+/* CSS for hover effect on table rows */
+.category-row {
+    transition: background-color 0.3s;
+}
+
+.category-row:hover {
+    background-color: #e9ecef; /* Light gray background color on hover */
+}
+html, body {
+      height: 100%;
+      margin: 0;
+      background: url("https://t4.ftcdn.net/jpg/06/70/47/83/360_F_670478365_rendlVf707cLCLdBEb2yM5EPW8xUL8bt.jpg") no-repeat center center fixed;
+      background-size: cover;
+    }
+  
+    .form-container {
+      background-color: black; /* Black background for the form */
+      color: white; /* White text color */
+    }
+  
+    .form-button {
+      background-color: #4b0082; /* Dark purple background */
+      border: none;
+      color: white;
+    }
+  
+    .table-container {
+      background-color: black; /* Black background for the table section */
+      color: white; /* White text color */
+      padding: 20px; /* Add padding to the container */
+      overflow: auto; /* Handle overflow */
+      border-radius: 8px; /* Round corners for visual consistency */
+      margin-top: 30px; /* Space between form and table */
+    }
+  
+    table {
+      width: 100%; /* Ensure table fits within container */
+      background-color: black; /* Background color for table */
+      color: white; /* Text color for table */
+      border-radius: 8px; /* Match the container's rounded corners */
+    }
+  
+    th, td {
+      text-align: left;
+      padding: 12px;
+    }
+  
+    thead th {
+      background-color: white; /* Soft grayish-blue color */
+      color: black; /* White color for table header text */
+      font-weight: bolder;
+      font-size: larger;
+    }
+    .background-container
+    {
+      background: url("https://t4.ftcdn.net/jpg/06/70/47/83/360_F_670478365_rendlVf707cLCLdBEb2yM5EPW8xUL8bt.jpg") no-repeat center center fixed;
+      background-size: cover;
+    /* background-color: #4b0082;  */
+      padding: 20px; 
+      border-radius: 8px; 
+      min-height: 100vh; 
+      height: auto; 
+      display: flex; 
+      flex-direction: column;
+    }
+  
+    .text-white-custom {
+      color: white;
+    }

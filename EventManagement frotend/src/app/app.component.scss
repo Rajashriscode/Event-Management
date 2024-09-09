@@ -1,0 +1,69 @@
+/* Ensure the body covers the full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: url("https://t4.ftcdn.net/jpg/06/70/47/83/360_F_670478365_rendlVf707cLCLdBEb2yM5EPW8xUL8bt.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Set the entire window background color to dark purple */
+// body {
+//   background-color: #4b0082; /* Dark purple background */
+// }
+
+/* Navbar styling */
+.custom-navbar {
+  background-color: rgb(1, 1, 94); /* Black background color */
+  border: none; /* Remove border */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px; /* Height of the navbar */
+  z-index: 1030; /* Ensure it stays on top of other content */
+}
+
+/* Logo styling */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff; /* White text color for the logo */
+  text-decoration: none;
+}
+
+/* Navbar link styling */
+.custom-navbar .nav-link.custom-link {
+  font-size: 18px;
+  color: #fff; /* White text color for navbar links */
+  font-weight: 600;
+  text-decoration: none; /* Remove underline */
+}
+
+.custom-navbar .nav-link.custom-link:hover {
+  color: #ddd; /* Light grey color on hover */
+  text-decoration: none; /* Remove underline on hover */
+}
+
+/* Centered box for navbar contents */
+.navbar-center-box {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  width: 100%;
+  background-color: #4b0082; /* Dark purple background */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Ensure the main content section covers the full viewport */
+.main-content {
+  margin: 0; /* Remove default margin */
+  padding: 20px;
+  border-radius: 0; /* Ensure no border-radius to avoid mismatched corners */
+  min-height: calc(100vh - 60px); /* Ensure content fits within viewport, adjusting for navbar height */
+  background-color: #4b0082; /* Dark purple background */
+  box-shadow: 0px 4px 20px rgba(75, 0, 130, 0.4); /* Optional shadow for depth */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

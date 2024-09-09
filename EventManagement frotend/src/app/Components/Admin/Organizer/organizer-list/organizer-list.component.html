@@ -1,0 +1,141 @@
+<style>
+  /* Ensure full-height coverage */
+  html, body {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+
+  .background-container {
+    background: url("https://t4.ftcdn.net/jpg/06/70/47/83/360_F_670478365_rendlVf707cLCLdBEb2yM5EPW8xUL8bt.jpg") no-repeat center center fixed;
+    background-size: cover;
+    padding: 20px;
+    border-radius: 8px;
+    min-height: 100vh; /* Ensure minimum height of viewport */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-attachment: fixed; /* Keep the background fixed during scroll */
+  }
+
+  .form-container {
+    background-color: black; /* Black background for the form */
+    color: white; /* White text color */
+    padding: 15px; /* Reduced padding */
+    border-radius: 8px;
+    margin-bottom: 20px; /* Reduced margin */
+    transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+    width: 70%; /* Adjusted width */
+    max-width: 500px; /* Max width to prevent it from getting too wide */
+    margin-top: 80px; /* Ensure form is below the fixed navbar */
+  }
+
+  .form-outline {
+    position: relative;
+  }
+
+  .form-control {
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 2px solid #007bff; /* Blue border */
+    color: black;
+    background-color: white;
+    width: 100%; /* Ensure full width */
+  }
+
+  .form-label {
+    color: white; /* White text color for label */
+  }
+
+  .table-container {
+    background-color: black; /* Black background for the table section */
+    color: white; /* White text color */
+    padding: 15px; /* Reduced padding */
+    border-radius: 8px;
+    width: 70%; /* Adjusted width */
+    max-width: 700px; /* Max width to prevent it from getting too wide */
+    transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  }
+
+  table {
+    width: 100%;
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 10px; /* Reduced padding */
+    transition: background-color 0.3s ease;
+  }
+
+  thead th {
+    background-color: white;
+    color: black;
+    font-weight: bolder;
+    font-size: larger;
+  }
+
+  .category-row {
+    transition: background-color 0.3s ease;
+  }
+
+  .category-row:hover {
+    background-color: #e9ecef;
+    color: black;
+  }
+
+  .btn-danger {
+    margin-right: 10px; /* Space between Delete and Edit buttons */
+  }
+
+  .btn-danger:hover, .btn-success:hover {
+    color: #ffffff;
+    cursor: pointer;
+  }
+
+  .form-container:hover, .table-container:hover {
+    box-shadow: 0px 4px 20px rgba(75, 0, 130, 0.4); /* Slight shadow on hover */
+  }
+</style>
+
+
+<section class="background-container">
+  <!-- Search Form Section -->
+  <div class="form-container">
+    <p class="text-center text-white mb-4 h4 mb-4">Search Organizer</p>
+    <div class="form-outline">
+      <input type="text" id="form1" [(ngModel)]="organizerToBeSearched" class="form-control" placeholder="Search name here" />
+    </div>
+  </div>
+
+  <!-- Organizer Table Section -->
+  <div class="table-container">
+    <table class="table table-hover table-bordered shadow-sm">
+      <thead>
+        <tr>
+          <th scope="col">No.</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngIf="(organizerList | userSearch : organizerToBeSearched) as result">
+          <tr *ngFor="let organizer of result; let i = index" class="category-row">
+            <th scope="row">{{i + 1}}.</th>
+            <td>{{organizer.name}}</td>
+            <td>{{organizer.email}}</td>
+            <td>
+              <button type="button" class="btn btn-success btn-sm" (click)="edit(organizer.userId)">Edit</button>
+              <button type="button" class="btn btn-danger btn-sm ms-2" (click)="delete(organizer.userId)">Delete</button>
+            </td>
+          </tr>
+          <p *ngIf="result.length === 0">No Organizer Found</p>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</section>

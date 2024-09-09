@@ -1,0 +1,101 @@
+<style>
+    .btn-dark-purple 
+    {
+        background-color: rgb(10, 132, 180);
+        color: white;
+        font-size: 20px;
+        height: 40px;
+        width: 150px;
+    }
+    .gradient-custom
+    {
+      background: url("https://t4.ftcdn.net/jpg/06/70/47/83/360_F_670478365_rendlVf707cLCLdBEb2yM5EPW8xUL8bt.jpg") no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+    }
+    
+</style>
+<section class="gradient-custom">
+    <div class="container py-5" style="padding-top: 60px;">
+      <div *ngIf="categoryList.length === 0" class="text-light">No Category found</div>
+      <div class="row justify-content-center align-items-center">
+        <div class="col-12 col-lg-9 col-xl-7">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px; background-color: #000; margin-top: 40px;">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-light text-center" style="font-size: 30px;">ADD EVENT</h3>
+              <form [formGroup]="addeventForm" (ngSubmit)="addEvent()">
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <label class="form-label text-light">Event Name</label>
+                      <input type="text" class="form-control form-control-lg" formControlName="eventName" />
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <label class="form-label text-light">Event Category</label>
+                      <select class="form-control form-control-lg" formControlName="eventCategory">
+                        <option *ngFor="let cate of categoryList" [value]="cate.category">{{cate.category}}</option>
+                      </select>
+                    </div>
+                  </div>
+  
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <label class="form-label text-light">Event Venue</label>
+                      <input type="text" class="form-control form-control-lg" formControlName="eventVenue" />
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <label class="form-label text-light">Event Date</label>
+                      <input type="date" class="form-control form-control-lg" formControlName="eventDate" />
+                    </div>
+                  </div>
+  
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <label class="form-label text-light">Event Time</label>
+                      <input type="text" class="form-control form-control-lg" formControlName="eventTime" />
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <label class="form-label text-light">Event Price</label>
+                      <input type="number" class="form-control form-control-lg" formControlName="eventPrice" />
+                    </div>
+                  </div>
+  
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <label class="form-label text-light">Event Description</label>
+                      <input type="text" class="form-control form-control-lg" formControlName="eventDescription" />
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="mt-4 pt-2 row justify-content-center align-items-center">
+                  <input class="btn btn-dark-purple btn-sm" value="Add Event" type="submit" />
+                </div>
+  
+                <div class="mt-4 pt-2 text-success row justify-content-center align-items-center">
+                  {{ message }}
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

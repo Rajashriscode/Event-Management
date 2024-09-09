@@ -1,0 +1,148 @@
+<style>
+  /* Ensure full-height coverage */
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  .background-container
+  {
+    
+  }
+
+  .form-container {
+    background-color: black; /* Black background for the form */
+    color: white; /* White text color */
+    transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  }
+
+  .form-button {
+    background-color: #4b0082; /* Dark purple background */
+    border: none;
+    color: white;
+  }
+
+  .table-container {
+    background-color: black; /* Black background for the table section */
+    color: white; /* White text color */
+    padding: 20px; /* Add padding to the container */
+    overflow: auto; /* Handle overflow */
+    border-radius: 8px; /* Round corners for visual consistency */
+    margin-top: 30px; /* Space between form and table */
+    transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  }
+
+  table {
+    width: 100%; /* Ensure table fits within container */
+    background-color: black; /* Background color for table */
+    color: white; /* Text color for table */
+    border-radius: 8px; /* Match the container's rounded corners */
+  }
+
+  th, td {
+    text-align: left;
+    padding: 12px;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+
+  thead th {
+    background-color: white; /* White background for table header */
+    color: black; /* Black text color for header */
+    font-weight: bolder;
+    font-size: larger;
+  }
+
+  /* Hover effect for table rows */
+  .category-row {
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+
+  .category-row:hover {
+    background-color: #e9ecef; /* Light gray background color on hover */
+    color: black; /* Ensure text color adjusts on hover */
+  }
+
+  /* Hover effect for buttons */
+  .btn-danger:hover, .btn-success:hover, .form-button:hover {
+     /* Slightly lighter dark purple for hover */
+    color: #ffffff; /* Ensure text stays white */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    padding: auto;
+  }
+  .background-container
+  {
+    /* background-color: #4b0082;  */
+    background: url("https://t4.ftcdn.net/jpg/06/70/47/83/360_F_670478365_rendlVf707cLCLdBEb2yM5EPW8xUL8bt.jpg") no-repeat center center fixed;
+  background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px; 
+    border-radius: 8px; 
+    min-height: 100vh; 
+    height: auto; 
+    display: flex; 
+    flex-direction: column;"
+
+  }
+
+  /* Hover effect for input field */
+  input:hover {
+    border-color: #4b0082; /* Dark purple border on hover */
+    background-color: #555555; /* Slightly darker background */
+  }
+
+  /* Hover effect for the form container */
+  .form-container:hover {
+    box-shadow: 0px 4px 20px rgba(75, 0, 130, 0.4); /* Slight shadow on hover */
+  }
+
+  /* Hover effect for the table container */
+  .table-container:hover {
+    box-shadow: 0px 4px 20px rgba(75, 0, 130, 0.4); /* Slight shadow on hover */
+  }
+
+  .text-white-custom {
+    color: white;
+  }
+</style>
+
+<!-- Container with dark purple background -->
+<div class="background-container">
+
+  <!-- Form Section -->
+  <div class="form-container text-center border border-primary rounded p-4 shadow-sm" style="width: 40%; margin: 60px auto 0;">
+    <p class="h4 mb-4 text-white-custom">Search User</p>
+
+    <!-- Search Input -->
+    <input type="text" id="form1" [(ngModel)]="userToBeSearched" class="form-control mb-3" placeholder="Search name here" style="font-size: 16px; padding: 8px; border-radius: 4px; border: 2px solid #007bff; color: black; background-color: white;">
+
+  </div>
+
+  <!-- Table Section -->
+  <div class="table-container text-center" style="width: 60%; margin: 30px auto;">
+    <table class="table table-hover table-bordered shadow-sm">
+      <thead>
+        <tr>
+          <th scope="col">No.</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngIf="( userList | userSearch : userToBeSearched) as result">
+          <tr *ngFor="let user of result; let i = index" class="category-row">
+            <th scope="row">{{i + 1}}.</th>
+            <td >{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>
+              <button type="button" (click)="edit(user.userId)" class="btn btn-success btn-sm ms-1">Edit</button>
+              <button type="button" class="btn btn-danger btn-sm ms-2" (click)="delete(user.userId)">Delete</button>
+              
+            </td>
+          </tr>
+          <p *ngIf="result.length === 0">No User Found</p>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+
+</div>

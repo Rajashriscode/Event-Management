@@ -1,0 +1,90 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    /* Ensure the image covers the entire background */
+    background: url("https://t4.ftcdn.net/jpg/06/70/47/83/360_F_670478365_rendlVf707cLCLdBEb2yM5EPW8xUL8bt.jpg") no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  .navbar {
+    height: 60px;
+    background-color: #000; /* Black background color */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  .main-content {
+    padding: 20px;
+    border-radius: 8px;
+    min-height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 60px auto 0;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4); /* Slight shadow for depth */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    position: relative;
+    z-index: 1;
+    background: url("https://t4.ftcdn.net/jpg/06/70/47/83/360_F_670478365_rendlVf707cLCLdBEb2yM5EPW8xUL8bt.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .table {
+    width: 100%;
+    background-color: black;
+    color: white;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid white;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  thead th {
+    background-color: white;
+    color: black;
+    font-weight: bolder;
+    font-size: larger;
+  }
+  
+  tbody tr {
+    transition: background-color 0.3s ease;
+  }
+  
+  tbody tr:hover {
+    background-color: #e9ecef;
+    color: black;
+  }
+  
+  .btn-approve {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-approve:hover {
+    background-color: #218838;
+  }
+  
+  .btn-pending {
+    background-color: #dc3545;
+    border: none;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-pending:hover {
+    background-color: #c82333;
+  }
+  
